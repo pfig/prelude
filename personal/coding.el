@@ -9,3 +9,10 @@
 (add-hook 'ruby-mode-hook 'my-coding-hook)
 (add-hook 'python-mode-hook 'my-coding-hook)
 (add-hook 'clojure-mode-hook 'my-coding-hook)
+
+(require 'clj-refactor)
+(defun my-clojure-mode-hook ()
+  (clj-refactor-mode 1)
+  (yas-minor-mode 1)
+  (cljr-add-keybindings-with-prefix "C-c C-m"))
+(add-hook 'clojure-mode-hook 'my-clojure-mode-hook)
